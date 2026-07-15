@@ -19,14 +19,14 @@ export interface RankPick { kind: string; row: RankRow; }
     <div class="rank">
       <div class="rank__head">
         <h3>{{ heading() }}</h3>
-        <div class="seg">
+        <div class="seg" [class.seg--b]="mode()==='worst'">
           <button [class.on]="mode()==='top'" (click)="mode.set('top')">Top</button>
           <button [class.on]="mode()==='worst'" (click)="mode.set('worst')">Worst</button>
         </div>
       </div>
 
       @if (tabs().length > 1) {
-        <div class="seg seg--entity">
+        <div class="seg seg--entity" [class.seg--b]="active()===1">
           @for (t of tabs(); track t.key; let ti = $index) {
             <button [class.on]="active()===ti" (click)="active.set(ti)">{{ t.label }}</button>
           }
@@ -85,10 +85,12 @@ export interface RankPick { kind: string; row: RankRow; }
     .rank__head { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; gap:12px; }
     h3 { margin:0; font-size:15px; font-weight:800; color:var(--text); }
 
-    .seg { display:flex; gap:0; border:1px solid var(--border-strong); border-radius:8px; overflow:hidden; background:#f9fafb; padding:2px; }
-    .seg button { border:0; background:transparent; padding:5px 12px; border-radius:6px; font-size:12px; cursor:pointer; color:var(--muted); font-weight:700; }
-    .seg button.on { background:#fff; color:var(--accent); box-shadow:var(--shadow); }
-    .seg--entity { display:inline-flex; align-self:flex-start; margin-bottom:14px; background:#eef2ff; border-color:transparent; }
+    .seg { position:relative; display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--border-strong); border-radius:8px; background:#f9fafb; padding:2px; }
+    .seg::before { content:''; position:absolute; top:2px; bottom:2px; left:2px; width:calc(50% - 2px); background:#fff; border-radius:6px; box-shadow:var(--shadow); transition:transform .22s cubic-bezier(.4,0,.2,1); }
+    .seg--b::before { transform:translateX(100%); }
+    .seg button { position:relative; z-index:1; border:0; background:transparent; padding:5px 12px; border-radius:6px; font-size:12px; cursor:pointer; color:var(--muted); font-weight:700; white-space:nowrap; transition:color .18s ease; }
+    .seg button.on { color:var(--accent); }
+    .seg--entity { display:inline-grid; justify-self:start; margin-bottom:14px; background:#eef2ff; border-color:transparent; }
 
     .list { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:4px; }
 

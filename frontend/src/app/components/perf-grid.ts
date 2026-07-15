@@ -28,9 +28,9 @@ import { IconComponent } from './icon';
             <input type="text" [placeholder]="searchPlaceholder()" [value]="q()"
               (input)="q.set($any($event.target).value)" />
           </div>
-          <div class="seg">
-            <button [class.on]="mode()==='top'" (click)="mode.set('top')">Top Performers ↑</button>
+          <div class="seg" [class.seg--b]="mode()==='top'">
             <button [class.on]="mode()==='attention'" (click)="mode.set('attention')">Needs Attention ↓</button>
+            <button [class.on]="mode()==='top'" (click)="mode.set('top')">Top Performers ↑</button>
           </div>
         </div>
       </div>
@@ -90,10 +90,12 @@ import { IconComponent } from './icon';
     .search { display:flex; align-items:center; gap:7px; background:#f9fafb; border:1px solid var(--border-strong); border-radius:9px; padding:0 11px; height:36px; color:var(--muted); }
     .search input { border:0; background:transparent; outline:0; font-size:13px; font-weight:600; color:#374151; width:150px; }
     .search:focus-within { border-color:var(--accent); background:#fff; box-shadow:0 0 0 3px rgba(99,102,241,.12); }
-    .seg { display:flex; gap:0; border:1px solid var(--border-strong); border-radius:9px; overflow:hidden; background:#f9fafb; padding:2px; }
-    .seg button { border:0; background:transparent; padding:7px 12px; border-radius:7px; font-size:12px; cursor:pointer; color:var(--muted); font-weight:700; white-space:nowrap; }
-    .seg button.on { background:#fff; color:var(--accent); box-shadow:var(--shadow); }
-    .seg button.on:last-child { color:#e11d48; }
+    .seg { position:relative; display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--border-strong); border-radius:9px; background:#f9fafb; padding:2px; }
+    .seg::before { content:''; position:absolute; top:2px; bottom:2px; left:2px; width:calc(50% - 2px); background:#fff; border-radius:7px; box-shadow:var(--shadow); transition:transform .22s cubic-bezier(.4,0,.2,1); }
+    .seg--b::before { transform:translateX(100%); }
+    .seg button { position:relative; z-index:1; border:0; background:transparent; padding:7px 12px; border-radius:7px; font-size:12px; cursor:pointer; color:var(--muted); font-weight:700; white-space:nowrap; transition:color .18s ease; }
+    .seg button.on { color:var(--accent); }
+    .seg button.on:first-child { color:#e11d48; }
 
     .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(255px, 1fr)); gap:14px; max-height:560px; overflow-y:auto; padding:2px 8px 2px 2px; }
     .grid::-webkit-scrollbar { width:8px; }
@@ -147,7 +149,7 @@ export class PerfGridComponent {
   inr = inr; num = num;
 
   q = signal('');
-  mode = signal<'top' | 'attention'>('top');
+  mode = signal<'top' | 'attention'>('attention');
   tip = signal<{ x: number; y: number; row: RankRow } | null>(null);
 
   // "Good" at/above 50% renewal, otherwise "Poor" (two-tone card design).

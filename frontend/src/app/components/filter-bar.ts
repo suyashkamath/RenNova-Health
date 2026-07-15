@@ -152,8 +152,8 @@ const HEALTH_PRODUCT_ID = '1';
     input:hover, select:hover { background:#fff; border-color:#d1d5db; }
     input:focus, select:focus { outline:0; background:#fff; border-color:var(--accent); box-shadow:0 0 0 3px rgba(99,102,241,.12); }
     .foot { grid-column:1 / -1; display:flex; align-items:center; justify-content:space-between; gap:14px; padding-top:14px; }
-    .reset { height:40px; flex:none; border:1px solid var(--border-strong); background:#f9fafb; color:var(--muted); border-radius:9px; padding:0 18px; font-size:13px; font-weight:750; cursor:pointer; transition:background .15s ease, color .15s ease, border-color .15s ease; }
-    .reset:hover { color:var(--accent); border-color:#c7d2fe; background:var(--accent-soft); }
+    .reset { height:40px; flex:none; border:1px solid var(--accent); background:var(--accent); color:#fff; border-radius:9px; padding:0 18px; font-size:13px; font-weight:750; cursor:pointer; box-shadow:var(--shadow); transition:background .15s ease, color .15s ease, border-color .15s ease; }
+    .reset:hover { background:#4f46e5; border-color:#4f46e5; }
     .note { margin:0; font-size:12px; color:var(--muted); line-height:1.4; }
     @media (max-width:1400px) {
       .bar { grid-template-columns:repeat(4, minmax(0, 1fr)); }

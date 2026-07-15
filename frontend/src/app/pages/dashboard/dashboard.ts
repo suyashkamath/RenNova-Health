@@ -43,6 +43,21 @@ export class DashboardComponent {
   kpis = computed(() => this.data()?.kpis);
   kpisPrev = computed(() => this.data()?.kpisPrev);
 
+  // "vs …" caption on the KPI deltas, matched to the active time-period preset
+  // (the backend compares against the preset-aligned previous window).
+  compareLabel = computed(() => {
+    switch (this.svc.filters().preset) {
+      case 'yesterday': return 'vs previous day';
+      case 'weekly': return 'vs last week';
+      case 'monthly': return 'vs last month';
+      case 'prevMonth': return 'vs month before';
+      case 'nextMonth': return 'vs this month';
+      case 'quarterly': return 'vs last quarter';
+      case 'yearly': return 'vs last year';
+      default: return 'vs last period';
+    }
+  });
+
   // The four top cards, rebuilt when the NOP/Premium toggle flips.
   topCards = computed(() => {
     const k = this.kpis();

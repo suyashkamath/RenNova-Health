@@ -28,3 +28,5 @@
 13:52:24.821 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/157770 rows) | filters: from=2026-07-01, to=2026-07-31
 13:53:59.980 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/157770 rows) | filters: from=2026-07-01, to=2026-07-31
 13:54:00.009 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/3163 rows) | filters: from=2026-07-01, to=2026-07-31, product=1
+14:12:52.221 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/53 rows) | filters: from=2026-07-01, to=2026-07-31, rm=MAYA TIWARI, product=1
+14:12:52.801 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/53 rows) | filters: from=2026-07-01, to=2026-07-31, rm=MAYA TIWARI, product=1

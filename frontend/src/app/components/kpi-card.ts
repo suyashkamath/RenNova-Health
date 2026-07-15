@@ -21,7 +21,7 @@ import { IconComponent } from './icon';
           @for (d of [delta()]; track d) {
             <span class="kpi__delta v-in" [class.d--good]="good()" [class.d--bad]="!good() && delta() !== 0" [class.d--flat]="delta() === 0">
               <app-icon [name]="delta()! < 0 ? 'trending-down' : 'trending-up'" [size]="14" />
-              {{ deltaText() }} vs last period
+              {{ deltaText() }} {{ compare() }}
             </span>
           }
         }
@@ -81,6 +81,8 @@ export class KpiCardComponent {
   delta = input<number | null | undefined>(undefined);
   /** '%' for relative change, 'pts' for percentage-point diffs (e.g. Renewal %). */
   deltaUnit = input<'%' | 'pts'>('%');
+  /** Comparison caption after the delta — preset-aware ("vs last month" / "vs last week" …). */
+  compare = input<string>('vs last period');
 
   // Purely directional: growth = green, dip = red — same rule on every card.
   good = computed(() => (this.delta() ?? 0) > 0);

@@ -26,12 +26,12 @@
     <section class="kpis kpis--secondary" [class.is-refreshing]="loading()">
       @for (c of topCards(); track c.label) {
         <app-kpi-card [label]="c.label" [value]="c.value" [icon]="c.icon" [tone]="c.tone" [sub]="c.sub"
-          [delta]="c.delta" [deltaUnit]="c.deltaUnit" />
+          [delta]="c.delta" [deltaUnit]="c.deltaUnit" [compare]="compareLabel()" />
       }
       <app-kpi-card label="Payment Link Avail." [value]="num(k.paymentLinkAvailable)" icon="link" tone="slate" [sub]="'of ' + num(k.due) + ' policies'"
-        [delta]="delta(k.paymentLinkAvailable, kpisPrev()?.paymentLinkAvailable)" />
+        [delta]="delta(k.paymentLinkAvailable, kpisPrev()?.paymentLinkAvailable)" [compare]="compareLabel()" />
       <app-kpi-card label="Renewal Notice Available" [value]="num(k.noticeAvailable)" icon="file-text" tone="slate" sub="Renewal Notices"
-        [delta]="delta(k.noticeAvailable, kpisPrev()?.noticeAvailable)" />
+        [delta]="delta(k.noticeAvailable, kpisPrev()?.noticeAvailable)" [compare]="compareLabel()" />
     </section>
 
     <!-- TREND + CALENDAR -->
