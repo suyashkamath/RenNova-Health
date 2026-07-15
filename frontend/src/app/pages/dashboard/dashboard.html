@@ -1,0 +1,84 @@
+<div class="page">
+  <header class="page__head">
+    <div>
+      <h1>Renewal Dashboard</h1>
+      <p class="subtitle">Overview of health renewals and performance metrics @if (data()) { · as of {{ data()!.today }} }</p>
+    </div>
+  </header>
+
+  <app-filter-bar [options]="options()" [initial]="svc.filters()" (filtersChange)="onFilterChange($event)"
+    [viewBy]="viewBy()" (viewByChange)="setViewBy($event)" />
+
+  @if (error()) {
+    <div class="banner banner--error">{{ error() }}</div>
+  }
+
+  <!-- First load: full shimmer skeleton. Later reloads: slim progress bar up top. -->
+  @if (loading() && !data()) {
+    <app-dashboard-skeleton />
+  }
+  @if (loading() && data()) {
+    <div class="refreshbar" role="status" aria-label="Updating data"></div>
+  }
+
+  @if (kpis(); as k) {
+    <!-- KPI ROW -->
+    <section class="kpis kpis--secondary" [class.is-refreshing]="loading()">
+      @for (c of topCards(); track c.label) {
+        <app-kpi-card [label]="c.label" [value]="c.value" [icon]="c.icon" [tone]="c.tone" [sub]="c.sub"
+          [delta]="c.delta" [deltaUnit]="c.deltaUnit" />
+      }
+      <app-kpi-card label="Payment Link Avail." [value]="num(k.paymentLinkAvailable)" icon="link" tone="slate" [sub]="'of ' + num(k.due) + ' policies'"
+        [delta]="delta(k.paymentLinkAvailable, kpisPrev()?.paymentLinkAvailable)" />
+      <app-kpi-card label="Renewal Notice Available" [value]="num(k.noticeAvailable)" icon="file-text" tone="slate" sub="Renewal Notices"
+        [delta]="delta(k.noticeAvailable, kpisPrev()?.noticeAvailable)" />
+    </section>
+
+    <!-- TREND + CALENDAR -->
+    <section class="grid-trend">
+      <div class="card chart-card">
+        <div class="card__head">
+          <h3>Renewal Trend (by expiry)</h3>
+          <span class="card__sub">{{ trend.effBucket() === 'month' ? 'Monthly' : 'Daily' }}</span>
+        </div>
+        <app-trend-chart #trend [filters]="svc.filters()" />
+      </div>
+      <app-calendar-widget [filters]="svc.filters()" />
+    </section>
+
+
+    <!-- SPLITS -->
+    <div class="section-head">
+      <span class="section-head__ic"><app-icon name="chart-column" [size]="18" /></span>
+      <div>
+        <h2>Data spread</h2>
+        <p>How renewals split across platform, channel and segment</p>
+      </div>
+    </div>
+    <section class="grid-3" [class.is-refreshing]="loading()">
+      <app-split-card title="Platform (Probus vs Insurer)" [rows]="data()!.platformSplit" [viewBy]="viewBy()" />
+      <app-split-card title="Channel (RM vs Customer)" [rows]="data()!.channelSplit" [viewBy]="viewBy()" />
+      <app-split-card title="Segment" [rows]="data()!.segmentSplit" [viewBy]="viewBy()" />
+    </section>
+
+    <!-- RANKINGS -->
+    <div class="section-head">
+      <span class="section-head__ic"><app-icon name="trending-up" [size]="18" /></span>
+      <div>
+        <h2>Performance</h2>
+        <p>Top and worst performers by region, branch, company and RM</p>
+      </div>
+    </div>
+    <section class="grid-3" [class.is-refreshing]="loading()">
+      <app-ranking-list-card [viewBy]="viewBy()"
+        [tabs]="[{ key: 'region', label: 'Region', rows: data()!.regionRanking }, { key: 'branch', label: 'Branch', rows: data()!.branchRanking }]"
+        (select)="onRankSelect($event)" />
+      <app-ranking-list-card title="Company Performance" [viewBy]="viewBy()"
+        [tabs]="[{ key: 'company', label: 'Insurer', rows: data()!.companyRanking }]"
+        (select)="onRankSelect($event)" />
+      <app-ranking-list-card title="RM Performance" [viewBy]="viewBy()"
+        [tabs]="[{ key: 'rm', label: 'RM', rows: data()!.rmRanking }]"
+        (select)="onRankSelect($event)" />
+    </section>
+  }
+</div>

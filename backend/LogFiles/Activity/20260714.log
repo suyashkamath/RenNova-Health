@@ -1,0 +1,67 @@
+12:20:08.823 | AUDIT | Main >> reveal_mobile >> 'superadmin' revealed mobile number for policy 19907140
+12:22:50.620 | AUDIT | Main >> export >> 'superadmin' downloaded CSV export 'Renewal_Policies_2026-07-14.csv' | filters: from=2026-07-01, to=2026-07-31, rm=NIDHI GURBANI, product=2, region=MP-2, branch=BO-IND-2
+12:24:33.472 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+12:24:33.506 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/157770 rows) | filters: from=2026-07-01, to=2026-07-31
+12:24:34.503 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/157770 rows) | filters: from=2026-07-01, to=2026-07-31
+12:24:34.631 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+12:24:34.811 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/157770 rows) | filters: from=2026-07-01, to=2026-07-31
+12:24:36.055 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+13:34:10.278 | AUDIT | AuthRoutes >> login >> 'superadmin' logged in (role=SUPER_ADMIN)
+13:50:49.441 | AUDIT | AuthRoutes >> login >> 'superadmin' logged in (role=SUPER_ADMIN)
+14:13:20.052 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+14:13:20.549 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+14:24:46.679 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+14:24:47.297 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+14:30:53.498 | AUDIT | AuthRoutes >> logout >> User logged out (refresh token revoked)
+14:31:03.753 | AUDIT | AuthRoutes >> login >> 'superadmin' logged in (role=SUPER_ADMIN)
+14:34:38.337 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+14:34:39.086 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+14:34:43.325 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+14:34:43.820 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+14:38:08.201 | AUDIT | Main >> reveal_mobile >> 'superadmin' revealed mobile number for policy 19836080
+14:38:10.447 | AUDIT | Main >> reveal_mobile >> 'superadmin' revealed mobile number for policy 19836723
+14:38:11.776 | AUDIT | Main >> reveal_mobile >> 'superadmin' revealed mobile number for policy 19836723
+14:38:14.413 | AUDIT | Main >> reveal_mobile >> 'superadmin' revealed mobile number for policy 19839792
+14:38:17.307 | AUDIT | Main >> reveal_mobile >> 'superadmin' revealed mobile number for policy 19836080
+14:38:19.494 | AUDIT | Main >> reveal_mobile >> 'superadmin' revealed mobile number for policy 19836723
+14:38:21.808 | AUDIT | Main >> reveal_mobile >> 'superadmin' revealed mobile number for policy 19836723
+14:38:51.121 | AUDIT | Main >> reveal_mobile >> 'superadmin' revealed mobile number for policy 19836080
+14:38:52.084 | AUDIT | Main >> reveal_mobile >> 'superadmin' revealed mobile number for policy 19836723
+14:38:53.860 | AUDIT | Main >> reveal_mobile >> 'superadmin' revealed mobile number for policy 19839792
+14:39:50.986 | AUDIT | Main >> reveal_mobile >> 'superadmin' revealed mobile number for policy 19839792
+14:39:52.258 | AUDIT | Main >> reveal_mobile >> 'superadmin' revealed mobile number for policy 19836723
+14:47:58.793 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+14:47:59.312 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+14:48:16.430 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+14:48:33.377 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/157770 rows) | filters: from=2026-07-01, to=2026-07-31
+14:48:33.464 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+14:48:34.949 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+14:51:11.080 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+14:51:12.228 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+14:51:20.188 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+14:51:31.164 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+14:51:34.743 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+14:57:00.200 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+14:57:00.736 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+15:00:21.163 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+15:00:21.772 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+15:00:22.313 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+15:06:27.099 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+15:06:28.297 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+15:06:37.783 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+15:06:38.307 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+15:06:49.998 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+15:06:50.523 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+15:06:52.236 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+15:06:52.827 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+15:42:27.885 | AUDIT | AuthRoutes >> login >> 'superadmin' logged in (role=SUPER_ADMIN)
+17:47:16.118 | AUDIT | AuthRoutes >> login >> 'superadmin' logged in (role=SUPER_ADMIN)
+18:05:32.847 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/4291 rows) | filters: from=2026-07-14, to=2026-07-14, product=2
+18:05:33.454 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/4291 rows) | filters: from=2026-07-14, to=2026-07-14, product=2
+18:06:29.247 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (31/31 rows) | filters: from=2026-07-01, to=2026-07-31, rm=HARDIK JETHVA , posp=CHAMPABEN R BHIMANI, product=2
+18:06:29.813 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (31/31 rows) | filters: from=2026-07-01, to=2026-07-31, rm=HARDIK JETHVA , posp=CHAMPABEN R BHIMANI, product=2
+18:08:07.026 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/157770 rows) | filters: from=2026-07-01, to=2026-07-31
+18:08:07.069 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+18:08:07.872 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/157770 rows) | filters: from=2026-07-01, to=2026-07-31
+18:08:09.287 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/153463 rows) | filters: from=2026-07-01, to=2026-07-31, product=2
+18:58:55.106 | AUDIT | Main >> export >> 'superadmin' downloaded CSV export 'Renewal_Policies_2026-07-14.csv' | filters: from=2026-07-14, to=2026-07-14, product=2

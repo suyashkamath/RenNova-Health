@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+pymssql
+psycopg[binary]
+psycopg_pool
+python-dotenv
+bcrypt
+pyjwt
+python-multipart

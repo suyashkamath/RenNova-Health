@@ -1,0 +1,72 @@
+<div class="page">
+  <header class="dhead">
+    <button class="back" (click)="goBack()" aria-label="Back to dashboard"><app-icon name="arrow-left" [size]="18" /></button>
+    <div class="dhead__main">
+      <div class="titlerow">
+        <h1>{{ label() || '—' }}</h1>
+        <span class="kindbadge">{{ kindLabel() }}</span>
+      </div>
+      <p class="meta">Renewal performance @if (period()) { · Report Period: {{ period() }} }</p>
+    </div>
+  </header>
+
+  @if (error()) { <div class="banner banner--error">{{ error() }}</div> }
+
+  <!-- Shimmer skeleton while the scoped report is being crunched -->
+  @if (loading() && !data()) {
+    <app-entity-skeleton />
+  }
+
+  @if (kpis(); as k) {
+    <section class="kpis">
+      <app-kpi-card label="Renewals Due" [value]="num(k.due)" icon="clipboard-list" tone="indigo" sub="In selected range" />
+      <app-kpi-card label="Renewed" [value]="num(k.renewed)" icon="circle-check" tone="green" [sub]="k.renewalPct + '% renewal rate'" />
+      <app-kpi-card label="Pending" [value]="num(k.pending)" icon="hourglass" tone="amber" sub="Not yet renewed" />
+      <app-kpi-card label="Renewal %" [value]="k.renewalPct + '%'" icon="trending-up" tone="violet" sub="Renewed ÷ Due" />
+      <app-kpi-card label="Gross Premium" [value]="inr(k.expectedPremiumGross)" icon="banknote" tone="blue" [sub]="'Net ' + inr(k.expectedPremiumNet) + ' (excl. tax)'" />
+      <app-kpi-card label="Collected Premium" [value]="inr(k.collectedPremiumGross)" icon="landmark" tone="teal" [sub]="'Net ' + inr(k.collectedPremiumNet)" />
+      <app-kpi-card label="Payment Link Avail." [value]="num(k.paymentLinkAvailable)" icon="link" tone="slate" [sub]="'of ' + num(k.due) + ' policies'" />
+      <app-kpi-card label="Renewal Notice Available" [value]="num(k.noticeAvailable)" icon="file-text" tone="slate" sub="Renewal Notices" />
+    </section>
+  }
+
+  @if (data(); as d) {
+    <section class="card chart-card">
+      <div class="card__head">
+        <h3>Renewal Trend (by expiry)</h3>
+        <span class="card__sub">{{ trend.effBucket() === 'month' ? 'Monthly' : 'Daily' }}</span>
+      </div>
+      <app-trend-chart #trend [filters]="trendFilters()" />
+    </section>
+  }
+
+  @if (kind() === 'rm' && (data()?.pospRanking?.length ?? 0) > 0) {
+    <app-perf-grid title="PoSP Performance" [subtitle]="'Performance metrics for agents under ' + label()"
+      searchPlaceholder="Search PoSP…" [rows]="data()!.pospRanking" (select)="openPosp($event)" />
+  }
+  <!-- Region drills into its Branches -->
+  @if (kind() === 'region' && (data()?.branchRanking?.length ?? 0) > 0) {
+    <app-perf-grid title="Branch Performance" [subtitle]="'Branches under ' + label()"
+      searchPlaceholder="Search branch…" [rows]="data()!.branchRanking" (select)="openBranch($event)" />
+  }
+  <!-- Region and Branch both drill into their RMs -->
+  @if ((kind() === 'region' || kind() === 'branch') && (data()?.rmRanking?.length ?? 0) > 0) {
+    <app-perf-grid title="RM Performance" [subtitle]="'Relationship managers under ' + label()"
+      searchPlaceholder="Search RM…" [rows]="data()!.rmRanking" (select)="openRm($event)" />
+  }
+
+  @if (data()) {
+    <section class="card">
+      <div class="card__head">
+        <div>
+          <h3>Policies <span class="count">({{ num(policyCount()) }})</span></h3>
+          <p class="hint">This list is large — open it in the Policy List or export to CSV.</p>
+        </div>
+        <div class="actions">
+          <button class="btn-ghost" (click)="openFullList()">Open in Policy List</button>
+          <button class="btn-primary" (click)="exportCsv()"><app-icon name="download" [size]="16" /> Export CSV</button>
+        </div>
+      </div>
+    </section>
+  }
+</div>

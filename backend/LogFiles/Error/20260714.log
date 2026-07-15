@@ -1,0 +1,542 @@
+12:08:06.380 | ERROR | Server >> requestLogMiddleware >> GET /api/policies -> 401 (7ms)
+12:46:18.292 | ERROR | Server >> requestLogMiddleware >> GET /api/filters -> 500 (63572ms) | unhandled: (9002, b"The transaction log for database 'tempdb' is full due to 'ACTIVE_TRANSACTION'.DB-Lib error message 20018, severity 17:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 17:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+Traceback (most recent call last):
+  File "src/pymssql/_pymssql.pyx", line 447, in pymssql._pymssql.Cursor.execute
+  File "src/pymssql/_mssql.pyx", line 1145, in pymssql._mssql.MSSQLConnection.execute_query
+  File "src/pymssql/_mssql.pyx", line 1177, in pymssql._mssql.MSSQLConnection.execute_query
+  File "src/pymssql/_mssql.pyx", line 1411, in pymssql._mssql.MSSQLConnection.get_result
+  File "src/pymssql/_mssql.pyx", line 1888, in pymssql._mssql.check_cancel_and_raise
+  File "src/pymssql/_mssql.pyx", line 1915, in pymssql._mssql.maybe_raise_MSSQLDatabaseException
+  File "src/pymssql/_mssql.pyx", line 1932, in pymssql._mssql.raise_MSSQLDatabaseException
+pymssql._mssql.MSSQLDatabaseException: (9002, b"The transaction log for database 'tempdb' is full due to 'ACTIVE_TRANSACTION'.DB-Lib error message 20018, severity 17:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 17:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/main.py", line 56, in request_log_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/_backends/_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/_backends/_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/main.py", line 183, in filters
+    "branches": q.distinct_branches(cur),
+                ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/queries.py", line 417, in distinct_branches
+    cur.execute(f"""SELECT DISTINCT RegionName, BranchName FROM {MASTER}
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      WHERE BranchName IS NOT NULL AND BranchName <> '' AND RegionName IS NOT NULL AND RegionName <> ''
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      ORDER BY BranchName""")
+      ^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/pymssql/_pymssql.pyx", line 465, in pymssql._pymssql.Cursor.execute
+pymssql.exceptions.OperationalError: (9002, b"The transaction log for database 'tempdb' is full due to 'ACTIVE_TRANSACTION'.DB-Lib error message 20018, severity 17:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 17:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+12:46:18.351 | ERROR | Server >> requestLogMiddleware >> GET /api/dashboard -> 500 (63632ms) | unhandled: (9002, b"The transaction log for database 'tempdb' is full due to 'ACTIVE_TRANSACTION'.DB-Lib error message 20018, severity 17:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+Traceback (most recent call last):
+  File "src/pymssql/_pymssql.pyx", line 447, in pymssql._pymssql.Cursor.execute
+  File "src/pymssql/_mssql.pyx", line 1145, in pymssql._mssql.MSSQLConnection.execute_query
+  File "src/pymssql/_mssql.pyx", line 1177, in pymssql._mssql.MSSQLConnection.execute_query
+  File "src/pymssql/_mssql.pyx", line 1411, in pymssql._mssql.MSSQLConnection.get_result
+  File "src/pymssql/_mssql.pyx", line 1888, in pymssql._mssql.check_cancel_and_raise
+  File "src/pymssql/_mssql.pyx", line 1915, in pymssql._mssql.maybe_raise_MSSQLDatabaseException
+  File "src/pymssql/_mssql.pyx", line 1932, in pymssql._mssql.raise_MSSQLDatabaseException
+pymssql._mssql.MSSQLDatabaseException: (9002, b"The transaction log for database 'tempdb' is full due to 'ACTIVE_TRANSACTION'.DB-Lib error message 20018, severity 17:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/main.py", line 56, in request_log_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/_backends/_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/_backends/_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/main.py", line 235, in dashboard
+    "branchRanking": q.rank_master(cur, "BranchName", src=src),
+                     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/queries.py", line 389, in rank_master
+    cur.execute(f"""
+    ~~~~~~~~~~~^^^^^
+      SELECT TOP {int(top)} mu.{attr} label, COUNT(*) due,
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+      WHERE mu.{attr} IS NOT NULL AND mu.{attr} <> ''
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      GROUP BY mu.{attr} ORDER BY COUNT(*) DESC""")
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/pymssql/_pymssql.pyx", line 465, in pymssql._pymssql.Cursor.execute
+pymssql.exceptions.OperationalError: (9002, b"The transaction log for database 'tempdb' is full due to 'ACTIVE_TRANSACTION'.DB-Lib error message 20018, severity 17:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+12:49:03.675 | ERROR | Server >> requestLogMiddleware >> GET /api/me -> 401 (14ms)
+12:49:03.678 | ERROR | Server >> requestLogMiddleware >> GET /api/me/views -> 401 (15ms)
+13:34:00.205 | ERROR | Server >> requestLogMiddleware >> GET /api/me -> 500 (12ms) | unhandled: consuming input failed: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+Traceback (most recent call last):
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/main.py", line 56, in request_log_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/dependencies/utils.py", line 680, in solve_dependencies
+    solved = await run_in_threadpool(call, **solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/_backends/_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/_backends/_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/rbac.py", line 59, in current_user
+    user = load_user(int(claims["sub"]))
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/rbac.py", line 30, in load_user
+    row = authdb.fetch_one(
+        """SELECT u.id, u.username, u.email, u.full_name, u.role_id, u.parent_id,
+    ...<4 lines>...
+        [user_id],
+    )
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/authdb.py", line 91, in fetch_one
+    cur.execute(sql, tuple(params))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/psycopg/cursor.py", line 117, in execute
+    raise ex.with_traceback(None)
+psycopg.OperationalError: consuming input failed: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+13:50:37.600 | ERROR | Server >> requestLogMiddleware >> GET /api/me/views -> 500 (14ms) | unhandled: consuming input failed: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+Traceback (most recent call last):
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/main.py", line 56, in request_log_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/dependencies/utils.py", line 680, in solve_dependencies
+    solved = await run_in_threadpool(call, **solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/_backends/_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/_backends/_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/rbac.py", line 59, in current_user
+    user = load_user(int(claims["sub"]))
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/rbac.py", line 30, in load_user
+    row = authdb.fetch_one(
+        """SELECT u.id, u.username, u.email, u.full_name, u.role_id, u.parent_id,
+    ...<4 lines>...
+        [user_id],
+    )
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/authdb.py", line 91, in fetch_one
+    cur.execute(sql, tuple(params))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/psycopg/cursor.py", line 117, in execute
+    raise ex.with_traceback(None)
+psycopg.OperationalError: consuming input failed: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+13:50:37.606 | ERROR | Server >> requestLogMiddleware >> GET /api/me -> 500 (21ms) | unhandled: consuming input failed: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+Traceback (most recent call last):
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/main.py", line 56, in request_log_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 457, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/dependencies/utils.py", line 680, in solve_dependencies
+    solved = await run_in_threadpool(call, **solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/_backends/_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/_backends/_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/rbac.py", line 59, in current_user
+    user = load_user(int(claims["sub"]))
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/rbac.py", line 30, in load_user
+    row = authdb.fetch_one(
+        """SELECT u.id, u.username, u.email, u.full_name, u.role_id, u.parent_id,
+    ...<4 lines>...
+        [user_id],
+    )
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/authdb.py", line 91, in fetch_one
+    cur.execute(sql, tuple(params))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/psycopg/cursor.py", line 117, in execute
+    raise ex.with_traceback(None)
+psycopg.OperationalError: consuming input failed: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+14:30:53.487 | ERROR | Server >> requestLogMiddleware >> GET /api/filters -> 401 (21ms)
+14:30:53.490 | ERROR | Server >> requestLogMiddleware >> GET /api/dashboard -> 401 (11ms)
+15:42:17.447 | ERROR | Server >> requestLogMiddleware >> GET /api/me -> 401 (8ms)
+15:42:17.449 | ERROR | Server >> requestLogMiddleware >> GET /api/me/views -> 401 (6ms)
+15:42:17.462 | ERROR | Server >> requestLogMiddleware >> POST /api/auth/refresh -> 500 (10ms) | unhandled: consuming input failed: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+Traceback (most recent call last):
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/main.py", line 56, in request_log_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/_backends/_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/_backends/_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/auth_routes.py", line 113, in refresh
+    row = authdb.fetch_one(
+        """SELECT id, user_id FROM dbo.refresh_tokens
+           WHERE token_hash=%s AND revoked_at IS NULL AND expires_at > (now() AT TIME ZONE 'utc')""",
+        [token_hash],
+    )
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/authdb.py", line 91, in fetch_one
+    cur.execute(sql, tuple(params))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/psycopg/cursor.py", line 117, in execute
+    raise ex.with_traceback(None)
+psycopg.OperationalError: consuming input failed: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+17:47:06.399 | ERROR | Server >> requestLogMiddleware >> GET /api/me -> 401 (33ms)
+17:47:06.404 | ERROR | Server >> requestLogMiddleware >> GET /api/me/views -> 401 (29ms)
+17:47:06.436 | ERROR | Server >> requestLogMiddleware >> POST /api/auth/refresh -> 500 (28ms) | unhandled: consuming input failed: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+Traceback (most recent call last):
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/main.py", line 56, in request_log_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/_backends/_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/_backends/_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/auth_routes.py", line 113, in refresh
+    row = authdb.fetch_one(
+        """SELECT id, user_id FROM dbo.refresh_tokens
+           WHERE token_hash=%s AND revoked_at IS NULL AND expires_at > (now() AT TIME ZONE 'utc')""",
+        [token_hash],
+    )
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard/backend/authdb.py", line 91, in fetch_one
+    cur.execute(sql, tuple(params))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/psycopg/cursor.py", line 117, in execute
+    raise ex.with_traceback(None)
+psycopg.OperationalError: consuming input failed: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+18:57:30.773 | ERROR | Server >> requestLogMiddleware >> GET /api/filters -> 401 (39ms)
+18:57:30.780 | ERROR | Server >> requestLogMiddleware >> GET /api/dashboard -> 401 (38ms)
+18:57:30.780 | ERROR | Server >> requestLogMiddleware >> GET /api/trend -> 401 (39ms)
+18:57:30.781 | ERROR | Server >> requestLogMiddleware >> GET /api/calendar -> 401 (38ms)

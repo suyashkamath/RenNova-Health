@@ -1,0 +1,51 @@
+@if (showChrome()) {
+<div class="shell">
+  <aside class="sidebar" [class.sidebar--collapsed]="collapsed()">
+    <div class="logo">
+      <span class="logo__mark"><app-icon name="shield-check" [size]="22" /></span>
+      @if (!collapsed()) {
+        <div>
+          <div class="logo__name">{{ brand }}</div>
+          <div class="logo__tag">Renewal Dashboard</div>
+        </div>
+      }
+      <button class="side-toggle" (click)="toggleSidebar()"
+        [title]="collapsed() ? 'Expand sidebar' : 'Collapse sidebar'" aria-label="Toggle sidebar">
+        <app-icon [name]="collapsed() ? 'arrow-right' : 'arrow-left'" [size]="15" />
+      </button>
+    </div>
+
+    <nav>
+      @for (group of navGroups(); track group.category) {
+        <div class="nav-group__label">{{ group.category }}</div>
+        @for (v of group.items; track v.view_code) {
+          <a [routerLink]="v.route" routerLinkActive="active"
+             [routerLinkActiveOptions]="{ exact: v.route === '/' }" [title]="collapsed() ? v.view_name : ''">
+            <span class="ic"><app-icon [name]="iconFor(v.view_code)" [size]="18" /></span>
+            <span class="nav-label">{{ v.view_name }}</span>
+          </a>
+        }
+      }
+    </nav>
+
+    <div class="side-foot">
+      <div class="user-chip">
+        <div class="user-chip__avatar">{{ (user()?.fullName || user()?.username || '?').charAt(0) }}</div>
+        <div class="user-chip__meta">
+          <div class="user-chip__name">{{ user()?.fullName || user()?.username }}</div>
+          <div class="user-chip__role">{{ user()?.role }}</div>
+        </div>
+      </div>
+      <button class="logout" (click)="logout()" [title]="collapsed() ? 'Sign out' : ''">
+        <app-icon name="shield-check" [size]="15" /> <span class="logout-label">Sign out</span>
+      </button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <router-outlet />
+  </main>
+</div>
+} @else {
+  <router-outlet />
+}

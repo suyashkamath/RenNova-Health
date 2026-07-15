@@ -1,0 +1,2 @@
+09:58:58.398 | ERROR | Server >> requestLogMiddleware >> GET /api/me -> 401 (3ms)
+09:58:58.399 | ERROR | Server >> requestLogMiddleware >> GET /api/me/views -> 401 (2ms)

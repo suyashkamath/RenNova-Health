@@ -1,0 +1,78 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+.venv/
+env/
+ENV/
+
+# Environment Variables
+.env
+
+
+# IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# # Logs
+# *.log
+# backend/LogFiles/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Type Checking
+.mypy_cache/
+.pyre/
+.pytype/
+
+# Ruff
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# FastAPI
+instance/
+
+# SQLite
+*.db
+*.sqlite3
+
+# Uploaded Files
+uploads/
+media/
+temp/
+tmp/
+
+# OCR / AI Models (optional)
+models/
+checkpoints/
+
+# Cache
+.cache/
+
+# Coverage
+coverage.xml
+
+# Secrets
+secrets.json
+credentials.json
+
+Renewal-Dashboard-Motor--main 2
+.claude

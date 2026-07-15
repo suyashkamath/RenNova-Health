@@ -1,0 +1,140 @@
+<div class="page">
+  <header class="page__head">
+    <div>
+      <h1>Renewal Policy List</h1>
+      <p class="subtitle">{{ total() }} policies match the current filters</p>
+    </div>
+    <div class="actions">
+      <a class="btn-ghost" routerLink="/"><app-icon name="arrow-left" [size]="16" /> Dashboard</a>
+      <button class="btn-primary" (click)="exportCsv()"><app-icon name="download" [size]="16" /> Export CSV</button>
+    </div>
+  </header>
+
+  <app-filter-bar [options]="options()" [initial]="svc.filters()" (filtersChange)="onFilterChange($event)" />
+
+  <div class="searchbar" [class.searchbar--active]="search().trim().length > 0">
+    <div class="searchbar__field">
+      <select [value]="searchField()" (change)="onSearchFieldChange($any($event.target).value)" aria-label="Search field">
+        @for (f of searchFields; track f.value) {
+          <option [value]="f.value">{{ f.label }}</option>
+        }
+      </select>
+      <app-icon name="chevron-down" [size]="14" />
+    </div>
+    <div class="searchbar__input">
+      <app-icon name="search" [size]="16" />
+      <input type="text" [value]="search()" [placeholder]="searchPlaceholder()"
+        (input)="onSearchInput($any($event.target).value)" (keyup.enter)="submitSearch()" />
+      @if (search()) {
+        <button class="searchbar__clear" (click)="clearSearch()" aria-label="Clear search">×</button>
+      }
+    </div>
+  </div>
+
+  @if (error()) { <div class="banner banner--error">{{ error() }}</div> }
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr class="groups">
+          <th colspan="4">Customer</th>
+          <th colspan="5">Policy</th>
+          <th colspan="7">Owner</th>
+          <th colspan="2" class="r">Money</th>
+          <th colspan="3" class="c">Actions</th>
+        </tr>
+        <tr>
+          <th (click)="sort('policyNo')">Policy No</th>
+          <th (click)="sort('insuredName')">Insured</th>
+          <th>Mobile</th>
+          <th (click)="sort('vehicleRegiNo')">Vehicle</th>
+          <th (click)="sort('companyName')">Company</th>
+          <th (click)="sort('segment')">Segment</th>
+          <th>Region</th>
+          <th>Branch</th>
+          <th (click)="sort('policyExpDate')">Expiry</th>
+          <th (click)="sort('rmName')">RM</th>
+          <th>RM Mobile</th>
+          <th>RM Email</th>
+          <th>POSP</th>
+          <th>POSP Mobile</th>
+          <th>POSP Email</th>
+          <th>Channel</th>
+          <th class="r" (click)="sort('netPremium')">Net</th>
+          <th class="r" (click)="sort('grossPremium')">Gross</th>
+          <th class="c">Link</th>
+          <th class="c">Notice</th>
+          <th class="c">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        @if (loading()) {
+          <tr><td colspan="21" class="state">Loading…</td></tr>
+        } @else if (rows().length === 0) {
+          <tr><td colspan="21" class="state">No policies match these filters.</td></tr>
+        } @else {
+          @for (r of rows(); track r.id) {
+            <tr>
+              <td class="mono">{{ r.policyNo }}</td>
+              <td class="strong">{{ r.insuredName }}</td>
+              <td>
+                @if (r.custMobile) {
+                  <button class="mob" [class.mob--copied]="copiedId() === r.id"
+                    (click)="toggleMobile(r)" (mouseleave)="hideMobile(r)"
+                    [title]="copiedId() === r.id ? 'Copied to clipboard' : 'Show & copy number'">
+                    <span class="mob__num">{{ revealed()[r.id] || r.custMobile }}</span>
+                    @if (copiedId() === r.id) { <span class="mob__tick">✓</span> }
+                  </button>
+                } @else { — }
+              </td>
+              <td class="mono">{{ r.vehicleRegiNo || '—' }}</td>
+              <td class="truncate" [title]="r.companyName">{{ r.companyName }}</td>
+              <td>{{ r.segment }}</td>
+              <td>{{ r.regionName || '—' }}</td>
+              <td>{{ r.branchName || '—' }}</td>
+              <td>{{ fmtDate(r.policyExpDate) }}</td>
+              <td>{{ r.rmName || '—' }}</td>
+              <td class="mono">
+                @if (r.rmMobile) { <a class="contact" [href]="'tel:' + r.rmMobile" [title]="'Call ' + r.rmMobile">{{ r.rmMobile }}</a> } @else { — }
+              </td>
+              <td>
+                @if (r.rmEmail) { <a class="contact" [href]="'mailto:' + r.rmEmail">{{ r.rmEmail }}</a> } @else { — }
+              </td>
+              <td>{{ r.posName || '—' }}</td>
+              <td class="mono">
+                @if (r.posMobile) { <a class="contact" [href]="'tel:' + r.posMobile" [title]="'Call ' + r.posMobile">{{ r.posMobile }}</a> } @else { — }
+              </td>
+              <td>
+                @if (r.posEmail) { <a class="contact" [href]="'mailto:' + r.posEmail">{{ r.posEmail }}</a> } @else { — }
+              </td>
+              <td><span class="chip" [class.chip--rm]="r.channel==='RM'">{{ r.channel === 'RM' ? 'RM' : 'Direct' }}</span></td>
+              <td class="r money">{{ inrFull(r.netPremium) }}</td>
+              <td class="r money strong">{{ inrFull(r.grossPremium) }}</td>
+              <td class="c">
+                @if (r.paymentLink) {
+                  <a [href]="r.paymentLink" target="_blank" rel="noopener" title="Open payment link"><app-icon name="link" [size]="16" /></a>
+                } @else { — }
+              </td>
+              <td class="c">
+                @if (r.noticeUrl) {
+                  <a [href]="r.noticeUrl" target="_blank" rel="noopener" title="Open renewal notice PDF"><app-icon name="file-text" [size]="16" /></a>
+                } @else { — }
+              </td>
+              <td class="c">
+                <span class="badge" [class.badge--ok]="r.isRenewed" [class.badge--pending]="!r.isRenewed">
+                  {{ r.isRenewed ? 'Renewed' : 'Pending' }}
+                </span>
+              </td>
+            </tr>
+          }
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pager">
+    <button (click)="prev()" [disabled]="page() === 1">‹ Prev</button>
+    <span>Page {{ page() }} of {{ totalPages() }}</span>
+    <button (click)="next()" [disabled]="page() === totalPages()">Next ›</button>
+  </div>
+</div>

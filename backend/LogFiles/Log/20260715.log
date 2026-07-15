@@ -1,0 +1,268 @@
+09:58:54.708 | INFO  | DB >> NewPool >> Database pool initialized (max=15 connections)
+09:58:55.187 | INFO  | AuthDB >> NewPool >> Auth DB pool initialized (db=renewal_auth)
+09:58:55.219 | INFO  | Config >> loadDotEnv >> Environment variables loaded from .env
+09:58:55.220 | INFO  | Main >> main >> Configuration loaded
+09:58:55.220 | INFO  | Main >> main >> CORS locked to origins: http://localhost:4200
+09:58:55.224 | INFO  | Main >> main >> Auth & management routers mounted
+09:58:55.226 | INFO  | Main >> serverRoutine >> Starting HTTP server
+09:58:58.398 | ERROR | Server >> requestLogMiddleware >> GET /api/me -> 401 (3ms)
+09:58:58.399 | ERROR | Server >> requestLogMiddleware >> GET /api/me/views -> 401 (2ms)
+09:58:58.724 | INFO  | AuthRoutes >> refresh >> Session refreshed for 'superadmin' (id=1)
+09:58:58.727 | INFO  | AuthRoutes >> refresh >> Session refreshed for 'superadmin' (id=1)
+09:58:58.739 | INFO  | Server >> requestLogMiddleware >> POST /api/auth/refresh -> 200 (133ms)
+09:58:58.742 | INFO  | Server >> requestLogMiddleware >> POST /api/auth/refresh -> 200 (113ms)
+09:58:58.757 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (12ms)
+09:58:58.771 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (25ms)
+09:59:00.031 | INFO  | DB >> NewPool >> SQL Server connection established
+09:59:00.031 | INFO  | DB >> NewPool >> SQL Server connection established
+09:59:00.037 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+09:59:00.266 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+09:59:00.588 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (1770ms)
+09:59:00.664 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+09:59:00.739 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (110ms)
+09:59:01.407 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (2592ms)
+09:59:01.758 | INFO  | DB >> NewPool >> SQL Server connection established
+09:59:01.760 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+09:59:01.832 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (1202ms)
+09:59:18.643 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+09:59:18.668 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+09:59:18.763 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (162ms)
+09:59:18.828 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+09:59:18.988 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (387ms)
+09:59:19.752 | INFO  | DB >> NewPool >> SQL Server connection established
+09:59:19.753 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+09:59:19.800 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1202ms)
+09:59:19.837 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (1236ms)
+09:59:22.208 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+09:59:22.220 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+09:59:22.226 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+09:59:22.321 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (141ms)
+09:59:22.347 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (166ms)
+09:59:22.379 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+09:59:22.530 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (351ms)
+09:59:23.312 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1135ms)
+09:59:26.266 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+09:59:26.269 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+09:59:26.288 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+09:59:26.392 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (153ms)
+09:59:26.396 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (157ms)
+09:59:26.452 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+09:59:26.716 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (477ms)
+09:59:27.436 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1199ms)
+10:03:50.901 | INFO  | DB >> NewPool >> Database pool initialized (max=15 connections)
+10:03:51.030 | INFO  | AuthDB >> NewPool >> Auth DB pool initialized (db=renewal_auth)
+10:03:51.059 | INFO  | Config >> loadDotEnv >> Environment variables loaded from .env
+10:03:51.060 | INFO  | Main >> main >> Configuration loaded
+10:03:51.060 | INFO  | Main >> main >> CORS locked to origins: http://localhost:4200
+10:03:51.064 | INFO  | Main >> main >> Auth & management routers mounted
+10:03:51.066 | INFO  | Main >> serverRoutine >> Starting HTTP server
+10:03:52.633 | INFO  | DB >> NewPool >> Database pool initialized (max=15 connections)
+10:03:52.692 | INFO  | AuthDB >> NewPool >> Auth DB pool initialized (db=renewal_auth)
+10:03:52.713 | INFO  | Config >> loadDotEnv >> Environment variables loaded from .env
+10:03:52.714 | INFO  | Main >> main >> Configuration loaded
+10:03:52.714 | INFO  | Main >> main >> CORS locked to origins: http://localhost:4200
+10:03:52.719 | INFO  | Main >> main >> Auth & management routers mounted
+10:03:52.721 | INFO  | Main >> serverRoutine >> Starting HTTP server
+10:03:53.883 | INFO  | DB >> NewPool >> Database pool initialized (max=15 connections)
+10:03:53.942 | INFO  | AuthDB >> NewPool >> Auth DB pool initialized (db=renewal_auth)
+10:03:53.964 | INFO  | Config >> loadDotEnv >> Environment variables loaded from .env
+10:03:53.964 | INFO  | Main >> main >> Configuration loaded
+10:03:53.964 | INFO  | Main >> main >> CORS locked to origins: http://localhost:4200
+10:03:53.969 | INFO  | Main >> main >> Auth & management routers mounted
+10:03:53.970 | INFO  | Main >> serverRoutine >> Starting HTTP server
+10:03:55.741 | INFO  | DB >> NewPool >> Database pool initialized (max=15 connections)
+10:03:55.799 | INFO  | AuthDB >> NewPool >> Auth DB pool initialized (db=renewal_auth)
+10:03:55.823 | INFO  | Config >> loadDotEnv >> Environment variables loaded from .env
+10:03:55.823 | INFO  | Main >> main >> Configuration loaded
+10:03:55.823 | INFO  | Main >> main >> CORS locked to origins: http://localhost:4200
+10:03:55.827 | INFO  | Main >> main >> Auth & management routers mounted
+10:03:55.829 | INFO  | Main >> serverRoutine >> Starting HTTP server
+10:03:57.217 | INFO  | DB >> NewPool >> Database pool initialized (max=15 connections)
+10:03:57.277 | INFO  | AuthDB >> NewPool >> Auth DB pool initialized (db=renewal_auth)
+10:03:57.300 | INFO  | Config >> loadDotEnv >> Environment variables loaded from .env
+10:03:57.300 | INFO  | Main >> main >> Configuration loaded
+10:03:57.301 | INFO  | Main >> main >> CORS locked to origins: http://localhost:4200
+10:03:57.305 | INFO  | Main >> main >> Auth & management routers mounted
+10:03:57.307 | INFO  | Main >> serverRoutine >> Starting HTTP server
+10:04:32.903 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (40ms)
+10:04:32.924 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (58ms)
+10:04:33.186 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (14ms)
+10:04:33.201 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (29ms)
+10:04:34.303 | INFO  | DB >> NewPool >> SQL Server connection established
+10:04:34.304 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+10:04:34.317 | INFO  | DB >> NewPool >> SQL Server connection established
+10:04:34.346 | INFO  | DB >> NewPool >> SQL Server connection established
+10:04:34.348 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+10:04:34.347 | INFO  | DB >> NewPool >> SQL Server connection established
+10:04:34.590 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+10:04:34.715 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+10:04:34.958 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (1995ms)
+10:04:35.020 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (1794ms)
+10:04:35.068 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+10:04:35.082 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+10:04:35.138 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (104ms)
+10:04:35.172 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (136ms)
+10:04:35.532 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (2571ms)
+10:04:35.611 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (2385ms)
+10:05:06.712 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+10:05:06.715 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+10:05:06.729 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+10:05:06.801 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (148ms)
+10:05:06.821 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (166ms)
+10:05:06.896 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+10:05:07.071 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (417ms)
+10:05:07.826 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1176ms)
+10:06:06.957 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+10:06:06.967 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+10:06:06.982 | INFO  | Main >> trend >> Trend computed 2026-05-01..2026-06-30 by day for 'superadmin'
+10:06:07.055 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (133ms)
+10:06:07.071 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (149ms)
+10:06:07.153 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-06-01..2026-06-30 (preset=prevMonth) by 'superadmin'
+10:06:07.308 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (386ms)
+10:06:08.121 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1201ms)
+10:06:17.890 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+10:06:17.895 | INFO  | Main >> trend >> Trend computed 2026-05-01..2026-06-30 by day for 'superadmin'
+10:06:17.909 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+10:06:17.993 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (135ms)
+10:06:18.018 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (161ms)
+10:06:18.164 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-06-01..2026-06-30 (preset=prevMonth) by 'superadmin'
+10:06:18.456 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (599ms)
+10:06:19.081 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1225ms)
+10:07:36.560 | INFO  | DB >> NewPool >> Database pool initialized (max=15 connections)
+10:07:36.685 | INFO  | AuthDB >> NewPool >> Auth DB pool initialized (db=renewal_auth)
+10:07:36.713 | INFO  | Config >> loadDotEnv >> Environment variables loaded from .env
+10:07:36.714 | INFO  | Main >> main >> Configuration loaded
+10:07:36.714 | INFO  | Main >> main >> CORS locked to origins: http://localhost:4200
+10:07:36.718 | INFO  | Main >> main >> Auth & management routers mounted
+10:07:36.720 | INFO  | Main >> serverRoutine >> Starting HTTP server
+10:07:43.391 | INFO  | DB >> NewPool >> Database pool initialized (max=15 connections)
+10:07:43.491 | INFO  | AuthDB >> NewPool >> Auth DB pool initialized (db=renewal_auth)
+10:07:43.517 | INFO  | Config >> loadDotEnv >> Environment variables loaded from .env
+10:07:43.517 | INFO  | Main >> main >> Configuration loaded
+10:07:43.518 | INFO  | Main >> main >> CORS locked to origins: http://localhost:4200
+10:07:43.523 | INFO  | Main >> main >> Auth & management routers mounted
+10:07:43.524 | INFO  | Main >> serverRoutine >> Starting HTTP server
+10:08:17.278 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (31ms)
+10:08:17.298 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (50ms)
+10:08:17.500 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (16ms)
+10:08:17.516 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (31ms)
+10:08:18.530 | INFO  | DB >> NewPool >> SQL Server connection established
+10:08:18.530 | INFO  | DB >> NewPool >> SQL Server connection established
+10:08:18.531 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+10:08:18.676 | INFO  | DB >> NewPool >> SQL Server connection established
+10:08:18.677 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+10:08:18.711 | INFO  | DB >> NewPool >> SQL Server connection established
+10:08:18.753 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+10:08:18.948 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+10:08:19.079 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (1752ms)
+10:08:19.232 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (1693ms)
+10:08:19.311 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+10:08:19.337 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+10:08:19.409 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (166ms)
+10:08:19.476 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (233ms)
+10:08:19.914 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (2590ms)
+10:08:20.128 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (2589ms)
+10:08:23.961 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+10:08:23.981 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+10:08:23.981 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+10:08:24.067 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (174ms)
+10:08:24.092 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (199ms)
+10:08:24.199 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+10:08:24.625 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (733ms)
+10:08:25.224 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1332ms)
+10:08:26.847 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+10:08:26.871 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+10:08:26.877 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+10:08:26.952 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (141ms)
+10:08:26.957 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (146ms)
+10:08:27.064 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+10:08:27.236 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (425ms)
+10:08:28.213 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1403ms)
+10:08:29.354 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+10:08:29.381 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+10:08:29.392 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+10:08:29.466 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (134ms)
+10:08:29.479 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (146ms)
+10:08:29.551 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+10:08:29.745 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (412ms)
+10:08:30.462 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1132ms)
+10:08:31.713 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+10:08:31.724 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+10:08:31.729 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+10:08:31.815 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (137ms)
+10:08:31.839 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (161ms)
+10:08:31.916 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+10:08:32.197 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (519ms)
+10:08:32.907 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1231ms)
+10:08:35.105 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+10:08:35.120 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+10:08:35.120 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+10:08:35.195 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (117ms)
+10:08:35.201 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (123ms)
+10:08:35.335 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+10:08:35.569 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (491ms)
+10:08:36.203 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1126ms)
+10:09:15.621 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (18ms)
+10:09:15.629 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (26ms)
+10:09:15.690 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+10:09:15.946 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+10:09:15.961 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (40ms)
+10:09:15.963 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (42ms)
+10:09:16.024 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+10:09:16.230 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (575ms)
+10:09:16.277 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+10:09:16.288 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (30ms)
+10:09:16.291 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (34ms)
+10:09:16.365 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+10:09:16.590 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (604ms)
+10:09:16.626 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (23ms)
+10:09:16.646 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (43ms)
+10:09:16.697 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+10:09:16.945 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1290ms)
+10:09:17.183 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (28ms)
+10:09:17.192 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (37ms)
+10:09:17.249 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+10:09:17.285 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1299ms)
+10:09:17.468 | INFO  | DB >> NewPool >> SQL Server connection established
+10:09:17.504 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (16ms)
+10:09:17.516 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (29ms)
+10:09:17.579 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+10:09:17.595 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1280ms)
+10:09:17.719 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+10:09:17.817 | INFO  | DB >> NewPool >> SQL Server connection established
+10:09:18.032 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+10:09:18.040 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (1724ms)
+10:09:18.316 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1650ms)
+10:09:18.346 | INFO  | DB >> NewPool >> SQL Server connection established
+10:09:18.354 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (1688ms)
+10:09:18.505 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1291ms)
+10:09:18.538 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+10:09:18.705 | INFO  | DB >> NewPool >> SQL Server connection established
+10:09:18.762 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1220ms)
+10:09:18.861 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (1647ms)
+10:09:18.914 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+10:09:19.225 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (1683ms)
+10:09:19.278 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+10:09:19.279 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+10:09:19.350 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (111ms)
+10:09:19.356 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (115ms)
+10:09:36.935 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+10:09:36.939 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+10:09:37.063 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (171ms)
+10:09:37.072 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (179ms)
+10:09:37.192 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+10:09:37.397 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (474ms)
+10:09:37.445 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+10:09:37.529 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (114ms)
+10:09:47.242 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+10:09:47.432 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (464ms)
+10:09:47.483 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+10:09:47.589 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (140ms)
+10:09:58.323 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+10:09:58.552 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+10:09:58.793 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (499ms)
+10:09:58.840 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+10:09:58.841 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+10:09:58.912 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (102ms)
+10:09:58.915 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (106ms)
+10:09:59.551 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1258ms)
