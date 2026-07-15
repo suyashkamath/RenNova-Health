@@ -1527,3 +1527,361 @@ psycopg.OperationalError: consuming input failed: server closed the connection u
 14:26:17.442 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
 14:26:17.744 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (571ms)
 14:26:18.545 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1377ms)
+14:27:36.195 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:27:36.195 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+14:27:36.207 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:27:36.275 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (136ms)
+14:27:36.295 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (156ms)
+14:27:36.394 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:27:36.629 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (491ms)
+14:27:37.431 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1295ms)
+14:27:45.230 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (20ms)
+14:27:45.242 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (31ms)
+14:27:45.335 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:27:45.528 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:27:45.751 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (469ms)
+14:27:45.806 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:27:45.822 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+14:27:45.900 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (133ms)
+14:27:45.937 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (171ms)
+14:27:46.552 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1270ms)
+14:27:47.233 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (35ms)
+14:27:47.247 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (48ms)
+14:27:47.332 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:27:47.600 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:27:47.995 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (707ms)
+14:27:48.075 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+14:27:48.076 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:27:48.184 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (169ms)
+14:27:48.185 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (172ms)
+14:27:48.657 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1371ms)
+14:27:50.680 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (35ms)
+14:27:50.680 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (35ms)
+14:27:50.756 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:27:51.027 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:27:51.273 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (563ms)
+14:27:51.342 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+14:27:51.346 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:27:51.434 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (150ms)
+14:27:51.486 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (202ms)
+14:27:52.190 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1482ms)
+14:27:52.402 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (24ms)
+14:27:52.413 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (35ms)
+14:27:52.477 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:27:52.735 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:27:52.831 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (27ms)
+14:27:52.855 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (51ms)
+14:27:52.920 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:27:52.994 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (552ms)
+14:27:53.256 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (35ms)
+14:27:53.272 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (50ms)
+14:27:53.333 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:27:53.460 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (29ms)
+14:27:53.469 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (38ms)
+14:27:53.536 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:27:53.587 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:27:53.747 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (30ms)
+14:27:53.750 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (33ms)
+14:27:53.946 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1504ms)
+14:27:54.006 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (44ms)
+14:27:54.025 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (730ms)
+14:27:54.033 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (71ms)
+14:27:54.102 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:27:54.272 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (24ms)
+14:27:54.281 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (32ms)
+14:27:54.332 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:27:54.580 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (1697ms)
+14:27:54.608 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (25ms)
+14:27:54.629 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (45ms)
+14:27:54.682 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:27:54.708 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:27:54.708 | INFO  | DB >> NewPool >> SQL Server connection established
+14:27:54.988 | INFO  | DB >> NewPool >> SQL Server connection established
+14:27:54.989 | INFO  | DB >> NewPool >> SQL Server connection established
+14:27:54.990 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:27:55.016 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (32ms)
+14:27:55.063 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (79ms)
+14:27:55.075 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (1011ms)
+14:27:55.081 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (2198ms)
+14:27:55.143 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:27:55.243 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (31ms)
+14:27:55.249 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (36ms)
+14:27:55.450 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (45ms)
+14:27:55.461 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (55ms)
+14:27:55.540 | INFO  | DB >> NewPool >> SQL Server connection established
+14:27:55.541 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:27:55.540 | INFO  | DB >> NewPool >> SQL Server connection established
+14:27:55.862 | INFO  | DB >> NewPool >> SQL Server connection established
+14:27:55.913 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (2618ms)
+14:27:56.037 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (2543ms)
+14:27:56.423 | INFO  | DB >> NewPool >> SQL Server connection established
+14:27:56.424 | INFO  | DB >> NewPool >> SQL Server connection established
+14:27:56.426 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:27:56.460 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:27:56.525 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:27:56.766 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (2702ms)
+14:27:56.774 | INFO  | DB >> NewPool >> SQL Server connection established
+14:27:56.775 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:27:56.867 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (1770ms)
+14:27:56.903 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (2594ms)
+14:27:57.093 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:27:57.102 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (3329ms)
+14:27:57.526 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (2430ms)
+14:27:57.579 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (4085ms)
+14:27:57.602 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (2944ms)
+14:27:57.605 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:27:57.851 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (3543ms)
+14:27:57.906 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:27:58.015 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (2743ms)
+14:27:58.180 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:27:58.449 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (2965ms)
+14:27:58.486 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (4708ms)
+14:27:58.549 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:27:58.551 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+14:27:58.722 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:27:58.760 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (261ms)
+14:27:58.817 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (3333ms)
+14:27:58.854 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (353ms)
+14:27:58.915 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (3645ms)
+14:27:59.238 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (4579ms)
+14:29:48.357 | ERROR | Server >> requestLogMiddleware >> GET /api/me -> 401 (6ms)
+14:29:48.361 | ERROR | Server >> requestLogMiddleware >> GET /api/me/views -> 401 (9ms)
+14:29:48.532 | INFO  | AuthRoutes >> refresh >> Session refreshed for 'superadmin' (id=1)
+14:29:48.590 | INFO  | Server >> requestLogMiddleware >> POST /api/auth/refresh -> 200 (224ms)
+14:29:48.600 | INFO  | AuthRoutes >> refresh >> Session refreshed for 'superadmin' (id=1)
+14:29:48.630 | INFO  | Server >> requestLogMiddleware >> POST /api/auth/refresh -> 200 (262ms)
+14:29:48.645 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (41ms)
+14:29:48.735 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (100ms)
+14:29:48.948 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:29:49.387 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:29:50.433 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (1656ms)
+14:29:50.659 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:29:50.700 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+14:29:50.771 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (297ms)
+14:29:50.800 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (326ms)
+14:29:50.984 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (2207ms)
+14:30:51.598 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (55ms)
+14:30:51.603 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (62ms)
+14:30:51.712 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:30:51.933 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:30:52.306 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (647ms)
+14:30:52.397 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+14:30:52.420 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:30:52.493 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (163ms)
+14:30:52.531 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (201ms)
+14:30:53.101 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1439ms)
+14:31:03.081 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (31ms)
+14:31:03.084 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (35ms)
+14:31:03.174 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:31:03.481 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:31:03.792 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (666ms)
+14:31:03.870 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+14:31:03.875 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:31:03.987 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (176ms)
+14:31:03.991 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (181ms)
+14:31:04.741 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1623ms)
+14:31:07.654 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (61ms)
+14:31:07.666 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (73ms)
+14:31:07.737 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:31:08.543 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:31:08.924 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (1224ms)
+14:31:08.984 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+14:31:08.994 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:31:09.120 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (185ms)
+14:31:09.150 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (214ms)
+14:31:09.449 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1750ms)
+14:31:21.783 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (29ms)
+14:31:21.800 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (45ms)
+14:31:21.852 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:31:22.114 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:31:22.281 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (25ms)
+14:31:22.361 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (540ms)
+14:31:22.619 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (20ms)
+14:31:22.628 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (29ms)
+14:31:22.699 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:31:22.964 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:31:23.267 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (610ms)
+14:31:23.329 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+14:31:23.329 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:31:23.337 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1518ms)
+14:31:23.409 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (128ms)
+14:31:23.416 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (134ms)
+14:31:23.450 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (17ms)
+14:31:23.462 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (29ms)
+14:31:23.526 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:31:23.797 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:31:24.089 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1433ms)
+14:31:24.131 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (645ms)
+14:31:24.457 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (27ms)
+14:31:24.467 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (37ms)
+14:31:24.524 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:31:24.708 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (23ms)
+14:31:24.719 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (34ms)
+14:31:24.774 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:31:24.777 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:31:25.046 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:31:25.119 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (629ms)
+14:31:25.265 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1780ms)
+14:31:25.492 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (753ms)
+14:31:25.520 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (24ms)
+14:31:25.532 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (36ms)
+14:31:25.596 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:31:26.093 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:31:26.118 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (30ms)
+14:31:26.128 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (40ms)
+14:31:26.205 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:31:26.261 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1771ms)
+14:31:26.465 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1727ms)
+14:31:26.476 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:31:26.552 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (1000ms)
+14:31:26.617 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (25ms)
+14:31:26.631 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (38ms)
+14:31:26.704 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:31:26.808 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (657ms)
+14:31:26.937 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:31:27.120 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1568ms)
+14:31:27.134 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (21ms)
+14:31:27.143 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (29ms)
+14:31:27.212 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:31:27.220 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (566ms)
+14:31:27.464 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:31:27.659 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1509ms)
+14:31:27.816 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (647ms)
+14:31:28.042 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1390ms)
+14:31:28.283 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (24ms)
+14:31:28.296 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (36ms)
+14:31:28.365 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:31:28.579 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1411ms)
+14:31:28.641 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:31:28.925 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (598ms)
+14:31:28.980 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:31:28.981 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+14:31:29.060 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (118ms)
+14:31:29.067 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (126ms)
+14:31:29.670 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1344ms)
+14:33:00.569 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (31ms)
+14:33:00.582 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (38ms)
+14:33:00.688 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:33:00.922 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:33:01.275 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (638ms)
+14:33:01.336 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+14:33:01.339 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:33:01.442 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (156ms)
+14:33:01.447 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (160ms)
+14:33:02.318 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1680ms)
+14:33:03.424 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (54ms)
+14:33:03.443 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (72ms)
+14:33:03.515 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:33:03.850 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:33:04.494 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (1015ms)
+14:33:04.554 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+14:33:04.558 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:33:04.654 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (152ms)
+14:33:04.660 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (158ms)
+14:33:05.353 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1877ms)
+14:36:20.869 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:36:21.308 | INFO  | Server >> requestLogMiddleware >> GET /api/policies -> 200 (537ms)
+14:36:21.767 | INFO  | Server >> requestLogMiddleware >> GET /api/policies -> 200 (457ms)
+14:36:22.316 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1553ms)
+14:36:22.356 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:36:23.925 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1605ms)
+14:36:32.991 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:36:33.221 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:36:33.449 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (529ms)
+14:36:33.505 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:36:33.505 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+14:36:33.582 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (116ms)
+14:36:33.613 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (148ms)
+14:36:34.241 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1325ms)
+14:36:40.962 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:36:40.968 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+14:36:40.972 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:36:41.057 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (146ms)
+14:36:41.062 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (151ms)
+14:36:41.193 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:36:41.264 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:36:41.264 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+14:36:41.369 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (289ms)
+14:36:41.379 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (299ms)
+14:36:41.574 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (663ms)
+14:36:41.860 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:36:42.084 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (507ms)
+14:36:42.468 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1557ms)
+14:36:42.501 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:36:43.711 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1240ms)
+14:37:01.484 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (18ms)
+14:37:01.494 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (26ms)
+14:37:01.565 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:37:01.854 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:37:02.062 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (537ms)
+14:37:02.106 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+14:37:02.108 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:37:02.184 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (108ms)
+14:37:02.187 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (112ms)
+14:37:02.898 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1374ms)
+14:37:26.337 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (15ms)
+14:37:26.347 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (23ms)
+14:37:26.437 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:37:26.729 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:37:27.044 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (647ms)
+14:37:27.091 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:37:27.091 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+14:37:27.177 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (118ms)
+14:37:27.179 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (120ms)
+14:37:27.759 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1363ms)
+14:38:02.329 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (19ms)
+14:38:02.336 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (25ms)
+14:38:02.406 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:38:02.724 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:38:02.990 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (626ms)
+14:38:03.052 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+14:38:03.056 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:38:03.121 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (112ms)
+14:38:03.214 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (205ms)
+14:38:03.813 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1450ms)
+14:40:13.627 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:40:13.928 | INFO  | Server >> requestLogMiddleware >> GET /api/policies -> 200 (351ms)
+14:40:14.265 | INFO  | Server >> requestLogMiddleware >> GET /api/policies -> 200 (331ms)
+14:40:14.961 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1388ms)
+14:40:14.999 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:40:16.300 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1335ms)
+14:40:19.822 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:40:20.084 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:40:20.419 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (643ms)
+14:40:20.503 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:40:20.521 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+14:40:20.588 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (150ms)
+14:40:20.642 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (204ms)
+14:40:21.174 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1398ms)
+14:41:07.382 | INFO  | Server >> requestLogMiddleware >> GET /api/me -> 200 (16ms)
+14:41:07.408 | INFO  | Server >> requestLogMiddleware >> GET /api/me/views -> 200 (41ms)
+14:41:07.470 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:41:08.238 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:41:08.463 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (1022ms)
+14:41:08.535 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+14:41:08.550 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:41:08.626 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (149ms)
+14:41:08.640 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (162ms)
+14:41:09.055 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1615ms)
+14:43:05.105 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:43:05.129 | INFO  | Main >> trend >> Trend computed 2026-05-01..2026-06-30 by day for 'superadmin'
+14:43:05.138 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:43:05.216 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (175ms)
+14:43:05.287 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (245ms)
+14:43:07.019 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-06-01..2026-06-30 (preset=prevMonth) by 'superadmin'
+14:43:07.176 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (2138ms)
+14:43:07.421 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (2380ms)
+14:43:11.938 | INFO  | Main >> calendar >> Calendar computed for 2026-07 for 'superadmin'
+14:43:11.938 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:43:11.944 | INFO  | Main >> trend >> Trend computed 2026-06-01..2026-07-31 by day for 'superadmin'
+14:43:12.028 | INFO  | Server >> requestLogMiddleware >> GET /api/trend -> 200 (136ms)
+14:43:12.032 | INFO  | Server >> requestLogMiddleware >> GET /api/calendar -> 200 (140ms)
+14:43:12.178 | INFO  | Main >> dashboard >> Dashboard aggregated for 2026-07-01..2026-07-31 (preset=monthly) by 'superadmin'
+14:43:12.526 | INFO  | Server >> requestLogMiddleware >> GET /api/dashboard -> 200 (636ms)
+14:43:13.321 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1430ms)
+14:48:22.905 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:48:23.209 | INFO  | Server >> requestLogMiddleware >> GET /api/policies -> 200 (353ms)
+14:48:23.724 | INFO  | Server >> requestLogMiddleware >> GET /api/policies -> 200 (510ms)
+14:48:24.490 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1657ms)
+14:48:24.533 | INFO  | Main >> filters >> Filter facets computed for user 'superadmin'
+14:48:25.885 | INFO  | Server >> requestLogMiddleware >> GET /api/filters -> 200 (1393ms)

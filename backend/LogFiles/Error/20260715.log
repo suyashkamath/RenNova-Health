@@ -161,3 +161,5 @@ psycopg.OperationalError: consuming input failed: server closed the connection u
 13:27:47.316 | ERROR | Server >> requestLogMiddleware >> GET /api/policies -> 401 (1ms)
 13:27:47.318 | ERROR | Server >> requestLogMiddleware >> GET /api/filters -> 401 (0ms)
 13:27:47.322 | ERROR | Server >> requestLogMiddleware >> GET /api/policies -> 401 (2ms)
+14:29:48.357 | ERROR | Server >> requestLogMiddleware >> GET /api/me -> 401 (6ms)
+14:29:48.361 | ERROR | Server >> requestLogMiddleware >> GET /api/me/views -> 401 (9ms)

@@ -71,17 +71,17 @@ export class DashboardComponent {
       const prevCollPct = p && p.expectedPremiumGross
         ? (p.collectedPremiumGross / p.expectedPremiumGross) * 100 : null;
       return [
-        { label: 'Premium Due', value: this.inr(k.expectedPremiumGross), icon: 'clipboard-list', tone: 'indigo', sub: 'Net ' + this.inr(k.expectedPremiumNet) + ' (excl. tax)', delta: this.delta(k.expectedPremiumGross, p?.expectedPremiumGross), deltaUnit: '%' as const },
+        { label: 'Premium Due', value: this.inr(k.expectedPremiumGross), icon: 'clipboard-list', tone: 'indigo', sub: 'Net ' + this.inr(k.expectedPremiumNet), delta: this.delta(k.expectedPremiumGross, p?.expectedPremiumGross), deltaUnit: '%' as const },
         { label: 'Premium Renewed', value: this.inr(k.collectedPremiumGross), icon: 'circle-check', tone: 'green', sub: 'Net ' + this.inr(k.collectedPremiumNet), delta: this.delta(k.collectedPremiumGross, p?.collectedPremiumGross), deltaUnit: '%' as const },
-        { label: 'Premium Pending', value: this.inr(pendingPrem), icon: 'hourglass', tone: 'amber', sub: 'Not yet collected', delta: this.delta(pendingPrem, prevPendingPrem), deltaUnit: '%' as const },
-        { label: 'Collection %', value: collPct + '%', icon: 'trending-up', tone: 'violet', sub: 'Collected ÷ Expected', delta: this.ptsDelta(collPct, prevCollPct), deltaUnit: 'pts' as const },
+        { label: 'Premium Pending', value: this.inr(pendingPrem), icon: 'hourglass', tone: 'amber', sub: '', delta: this.delta(pendingPrem, prevPendingPrem), deltaUnit: '%' as const },
+        { label: 'Collection %', value: collPct + '%', icon: 'trending-up', tone: 'violet', sub: '', delta: this.ptsDelta(collPct, prevCollPct), deltaUnit: 'pts' as const },
       ];
     }
     return [
-      { label: 'Renewals Due', value: this.num(k.due), icon: 'clipboard-list', tone: 'indigo', sub: 'In selected range', delta: this.delta(k.due, p?.due), deltaUnit: '%' as const },
-      { label: 'Renewed', value: this.num(k.renewed), icon: 'circle-check', tone: 'green', sub: k.renewalPct + '% renewal rate', delta: this.delta(k.renewed, p?.renewed), deltaUnit: '%' as const },
-      { label: 'Pending ', value: this.num(k.pending), icon: 'hourglass', tone: 'amber', sub: 'Not yet renewed', delta: this.delta(k.pending, p?.pending), deltaUnit: '%' as const },
-      { label: 'Renewal %', value: k.renewalPct + '%', icon: 'trending-up', tone: 'violet', sub: 'Renewed ÷ Due', delta: this.ptsDelta(k.renewalPct, p?.renewalPct), deltaUnit: 'pts' as const },
+      { label: 'Renewals Due', value: this.num(k.due), icon: 'clipboard-list', tone: 'indigo', sub: '', delta: this.delta(k.due, p?.due), deltaUnit: '%' as const },
+      { label: 'Renewed', value: this.num(k.renewed), icon: 'circle-check', tone: 'green', sub: '', delta: this.delta(k.renewed, p?.renewed), deltaUnit: '%' as const },
+      { label: 'Pending ', value: this.num(k.pending), icon: 'hourglass', tone: 'amber', sub: '', delta: this.delta(k.pending, p?.pending), deltaUnit: '%' as const },
+      { label: 'Renewal %', value: k.renewalPct + '%', icon: 'trending-up', tone: 'violet', sub: '', delta: this.ptsDelta(k.renewalPct, p?.renewalPct), deltaUnit: 'pts' as const },
     ];
   });
 

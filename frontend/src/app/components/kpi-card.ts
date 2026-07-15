@@ -50,7 +50,7 @@ import { IconComponent } from './icon';
     @keyframes v-in { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: none; } }
     @media (prefers-reduced-motion: reduce) { .v-in { animation: none; } }
     .kpi__foot { margin-top:12px; display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
-    .kpi__sub { margin: 0; font-size: 12px; color: var(--muted-soft,#9ca3af); line-height:1.35; }
+    .kpi__sub { margin: 0 0 0 auto; font-size: 12px; color: var(--muted-soft,#9ca3af); line-height:1.35; text-align:right; }
     .kpi__delta { display:inline-flex; align-items:center; gap:4px; font-size:12px; font-weight:800; white-space:nowrap; }
     .d--good { color:#059669; }
     .d--bad { color:#e11d48; }
