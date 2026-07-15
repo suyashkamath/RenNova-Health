@@ -66,7 +66,7 @@
       <span class="section-head__ic"><app-icon name="trending-up" [size]="18" /></span>
       <div>
         <h2>Performance</h2>
-        <p>Top and worst performers by region, branch, company and RM</p>
+        <p>Top and worst performers by region, branch, company, RM and PoSP</p>
       </div>
     </div>
     <section class="grid-3" [class.is-refreshing]="loading()">
@@ -76,8 +76,8 @@
       <app-ranking-list-card title="Company Performance" [viewBy]="viewBy()"
         [tabs]="[{ key: 'company', label: 'Insurer', rows: data()!.companyRanking }]"
         (select)="onRankSelect($event)" />
-      <app-ranking-list-card title="RM Performance" [viewBy]="viewBy()"
-        [tabs]="[{ key: 'rm', label: 'RM', rows: data()!.rmRanking }]"
+      <app-ranking-list-card [viewBy]="viewBy()"
+        [tabs]="[{ key: 'rm', label: 'RM', rows: data()!.rmRanking }, { key: 'posp', label: 'PoSP', rows: data()!.pospRanking }]"
         (select)="onRankSelect($event)" />
     </section>
   }

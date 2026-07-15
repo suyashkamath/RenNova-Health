@@ -16,6 +16,7 @@ from adapter import (COLUMNS, HEALTH_SUB_PRODUCT_MAP, PRODUCT_MAP, TABLE,
 # 'UNKNOWN' — otherwise a blank platform ('') shows up as an empty-label split row.
 PLATFORM = "UPPER(ISNULL(NULLIF(LTRIM(RTRIM(platform)), ''), 'UNKNOWN'))"
 VERTICAL = "UPPER(ISNULL(NULLIF(LTRIM(RTRIM(vertical_name)), ''), 'UNKNOWN'))"
+POLICY_TYPE = "UPPER(ISNULL(NULLIF(LTRIM(RTRIM(policy_type)), ''), 'UNKNOWN'))"
 PAYLINK = "(payment_link IS NOT NULL AND LTRIM(RTRIM(payment_link)) <> '')"
 # CAST control_no to varchar so this works whether the column is numeric or text
 # (a bare `control_no <> 0` would throw a conversion error on non-numeric strings).
@@ -296,6 +297,8 @@ def build_where(f: dict, include_dates: bool = True):
         cl.append(f"{PLATFORM} = %s"); p.append(f["platform"].upper())
     if f.get("vertical"):
         cl.append(f"{VERTICAL} = %s"); p.append(f["vertical"].upper())
+    if f.get("policyType"):
+        cl.append(f"{POLICY_TYPE} = %s"); p.append(f["policyType"].upper())
     if f.get("channel") == "RM":
         cl.append("(am_id IS NOT NULL AND am_id <> 0)")
     if f.get("channel") == "CUSTOMER":

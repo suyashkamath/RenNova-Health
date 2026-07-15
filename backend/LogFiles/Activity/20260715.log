@@ -1,0 +1,30 @@
+11:09:25.326 | AUDIT | AuthRoutes >> login >> 'superadmin' failed login (wrong password)
+11:09:31.292 | AUDIT | AuthRoutes >> login >> 'superadmin' logged in (role=SUPER_ADMIN)
+13:27:47.767 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/3163 rows) | filters: from=2026-07-01, to=2026-07-31, product=1
+13:27:59.093 | AUDIT | AuthRoutes >> login >> 'superadmin' logged in (role=SUPER_ADMIN)
+13:28:11.168 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/3163 rows) | filters: from=2026-07-01, to=2026-07-31, product=1
+13:28:11.810 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/3163 rows) | filters: from=2026-07-01, to=2026-07-31, product=1
+13:28:34.421 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 2 (50/3163 rows) | filters: from=2026-07-01, to=2026-07-31, product=1
+13:28:38.108 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 3 (50/3163 rows) | filters: from=2026-07-01, to=2026-07-31, product=1
+13:28:40.700 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 4 (50/3163 rows) | filters: from=2026-07-01, to=2026-07-31, product=1
+13:28:43.856 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 5 (50/3163 rows) | filters: from=2026-07-01, to=2026-07-31, product=1
+13:28:47.345 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/157770 rows) | filters: from=2026-07-01, to=2026-07-31
+13:28:48.185 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/3163 rows) | filters: from=2026-07-01, to=2026-07-31, product=1
+13:28:54.885 | AUDIT | Main >> reveal_mobile >> 'superadmin' revealed mobile number for policy 19834758
+13:33:21.039 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (16/16 rows) | filters: from=2026-07-01, to=2026-07-31, product=1, subProduct=26
+13:42:56.420 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/3163 rows) | filters: from=2026-07-01, to=2026-07-31, product=1
+13:42:56.654 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/157770 rows) | filters: from=2026-07-01, to=2026-07-31
+13:42:57.987 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/3163 rows) | filters: from=2026-07-01, to=2026-07-31, product=1
+13:42:58.267 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/157770 rows) | filters: from=2026-07-01, to=2026-07-31
+13:43:26.702 | AUDIT | Main >> reveal_mobile >> 'superadmin' revealed mobile number for policy 19835852
+13:43:28.319 | AUDIT | Main >> reveal_mobile >> 'superadmin' revealed mobile number for policy 19990622
+13:48:59.517 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/3163 rows) | filters: from=2026-07-01, to=2026-07-31, product=1
+13:48:59.790 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/157770 rows) | filters: from=2026-07-01, to=2026-07-31
+13:52:23.039 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/3163 rows) | filters: from=2026-07-01, to=2026-07-31, product=1
+13:52:23.339 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/157770 rows) | filters: from=2026-07-01, to=2026-07-31
+13:52:23.346 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/157770 rows) | filters: from=2026-07-01, to=2026-07-31
+13:52:24.236 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/3163 rows) | filters: from=2026-07-01, to=2026-07-31, product=1
+13:52:24.640 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/3163 rows) | filters: from=2026-07-01, to=2026-07-31, product=1
+13:52:24.821 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/157770 rows) | filters: from=2026-07-01, to=2026-07-31
+13:53:59.980 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/157770 rows) | filters: from=2026-07-01, to=2026-07-31
+13:54:00.009 | AUDIT | Main >> policies >> 'superadmin' viewed policy list page 1 (50/3163 rows) | filters: from=2026-07-01, to=2026-07-31, product=1

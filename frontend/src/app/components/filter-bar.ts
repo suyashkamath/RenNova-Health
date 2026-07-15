@@ -68,6 +68,18 @@ const HEALTH_PRODUCT_ID = '1';
         </select>
       </div>
       <div class="f">
+        <label>Vertical</label>
+        <select [(ngModel)]="model.vertical" (change)="emit()">
+          <option value="">All</option>
+          @for (v of options()?.verticals || []; track v) { <option [value]="v">{{ verticalLabel(v) }}</option> }
+        </select>
+      </div>
+      <div class="f">
+        <label>Policy Type</label>
+        <app-autocomplete [options]="options()?.policyTypes || []" [value]="model.policyType || ''"
+          placeholder="All" (valueChange)="model.policyType = $event; emit()" />
+      </div>
+      <div class="f">
         <label>Region</label>
         <app-autocomplete [options]="options()?.regions || []" [value]="model.region || ''"
           placeholder="All" (valueChange)="model.region = $event; onRegionChange()" />
@@ -82,6 +94,11 @@ const HEALTH_PRODUCT_ID = '1';
         <label>RM</label>
         <app-autocomplete [options]="options()?.rms || []" [value]="model.rm || ''"
           placeholder="All" (valueChange)="model.rm = $event; emit()" />
+      </div>
+      <div class="f">
+        <label>PoSP</label>
+        <app-autocomplete [options]="options()?.posps || []" [value]="model.posp || ''"
+          placeholder="All" (valueChange)="model.posp = $event; emit()" />
       </div>
       <div class="f">
         <label>Platform</label>
@@ -187,8 +204,19 @@ export class FilterBarComponent {
     return {
       from: w.from, to: w.to,
       company: '', product: HEALTH_PRODUCT_ID, subProduct: '', region: '', branch: '',
-      rm: '', posp: '', platform: '', channel: '', isRenewed: '',
+      vertical: '', policyType: '', rm: '', posp: '', platform: '', channel: '', isRenewed: '',
     };
+  }
+
+  // Friendly display names for the raw vertical_name values coming from the data.
+  private static readonly VERTICAL_LABELS: Record<string, string> = {
+    'HEALTH': 'Health Insurance',
+    'PERSONAL ACCIDENT': 'PA - Personal Accident',
+    'UNKNOWN': 'Unknown',
+  };
+
+  verticalLabel(v: string): string {
+    return FilterBarComponent.VERTICAL_LABELS[v] || v;
   }
 
   // Sub-products shown depend on the chosen Product (cascade); All = every sub-product (deduped).

@@ -86,8 +86,8 @@ log.info("Auth & management routers mounted", module="Main", func="main")
 
 _FILTER_KEYS = (
     "from", "to", "company", "rm", "posp", "platform", "product", "subProduct",
-    "region", "branch", "vertical", "channel", "isRenewed", "hasPaymentLink",
-    "noticeAvailable", "search", "searchField",
+    "region", "branch", "vertical", "policyType", "channel", "isRenewed",
+    "hasPaymentLink", "noticeAvailable", "search", "searchField",
 )
 
 
@@ -167,6 +167,7 @@ def filters(request: Request, user: dict = Depends(rbac.current_user)):
         w_posp, p_posp = wx("posp")
         w_platform, p_platform = wx("platform")
         w_vertical, p_vertical = wx("vertical")
+        w_ptype, p_ptype = wx("policyType")
         w_product, p_product = wx("product", "subProduct")  # keep products fully switchable
         w_sub, p_sub = wx("subProduct")                     # sub-products cascade from product
         log.info(f"Filter facets computed for user '{user['username']}'")
@@ -182,6 +183,7 @@ def filters(request: Request, user: dict = Depends(rbac.current_user)):
             "regions": q.distinct_master(cur, "RegionName"),
             "branches": q.distinct_branches(cur),
             "verticals": q.distinct_expr(cur, q.VERTICAL, w_vertical, p_vertical),
+            "policyTypes": q.distinct_expr(cur, q.POLICY_TYPE, w_ptype, p_ptype),
             "expDateMin": base["from"],
             "expDateMax": base["to"],
         }

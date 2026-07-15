@@ -1,2 +1,163 @@
 09:58:58.398 | ERROR | Server >> requestLogMiddleware >> GET /api/me -> 401 (3ms)
 09:58:58.399 | ERROR | Server >> requestLogMiddleware >> GET /api/me/views -> 401 (2ms)
+11:09:16.570 | ERROR | Server >> requestLogMiddleware >> GET /api/users -> 401 (8ms)
+11:09:16.573 | ERROR | Server >> requestLogMiddleware >> GET /api/managers -> 401 (10ms)
+11:09:16.574 | ERROR | Server >> requestLogMiddleware >> GET /api/roles -> 401 (10ms)
+11:09:16.574 | ERROR | Server >> requestLogMiddleware >> GET /api/regions -> 401 (11ms)
+11:09:16.594 | ERROR | Server >> requestLogMiddleware >> POST /api/auth/refresh -> 500 (16ms) | unhandled: consuming input failed: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+Traceback (most recent call last):
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard-Health/backend/main.py", line 56, in request_log_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/_backends/_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/_backends/_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard-Health/backend/auth_routes.py", line 113, in refresh
+    row = authdb.fetch_one(
+        """SELECT id, user_id FROM dbo.refresh_tokens
+           WHERE token_hash=%s AND revoked_at IS NULL AND expires_at > (now() AT TIME ZONE 'utc')""",
+        [token_hash],
+    )
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard-Health/backend/authdb.py", line 91, in fetch_one
+    cur.execute(sql, tuple(params))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/psycopg/cursor.py", line 117, in execute
+    raise ex.with_traceback(None)
+psycopg.OperationalError: consuming input failed: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+11:09:16.621 | ERROR | Server >> requestLogMiddleware >> GET /api/users -> 401 (1ms)
+11:09:16.623 | ERROR | Server >> requestLogMiddleware >> GET /api/roles -> 401 (2ms)
+11:09:16.624 | ERROR | Server >> requestLogMiddleware >> GET /api/managers -> 401 (3ms)
+11:09:16.626 | ERROR | Server >> requestLogMiddleware >> GET /api/regions -> 401 (1ms)
+11:09:25.326 | ERROR | Server >> requestLogMiddleware >> POST /api/auth/login -> 401 (275ms)
+13:27:47.260 | ERROR | Server >> requestLogMiddleware >> GET /api/filters -> 401 (18ms)
+13:27:47.263 | ERROR | Server >> requestLogMiddleware >> GET /api/policies -> 401 (16ms)
+13:27:47.266 | ERROR | Server >> requestLogMiddleware >> GET /api/filters -> 401 (0ms)
+13:27:47.266 | ERROR | Server >> requestLogMiddleware >> GET /api/policies -> 401 (0ms)
+13:27:47.289 | ERROR | Server >> requestLogMiddleware >> POST /api/auth/refresh -> 500 (17ms) | unhandled: consuming input failed: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+Traceback (most recent call last):
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard-Health/backend/main.py", line 56, in request_log_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/fastapi/routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/starlette/concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/_backends/_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/anyio/_backends/_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard-Health/backend/auth_routes.py", line 113, in refresh
+    row = authdb.fetch_one(
+        """SELECT id, user_id FROM dbo.refresh_tokens
+           WHERE token_hash=%s AND revoked_at IS NULL AND expires_at > (now() AT TIME ZONE 'utc')""",
+        [token_hash],
+    )
+  File "/Users/suyash.kamath/Desktop/Renewal-Dashboard-Health/backend/authdb.py", line 91, in fetch_one
+    cur.execute(sql, tuple(params))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suyash.kamath/Library/Python/3.14/lib/python/site-packages/psycopg/cursor.py", line 117, in execute
+    raise ex.with_traceback(None)
+psycopg.OperationalError: consuming input failed: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+13:27:47.315 | ERROR | Server >> requestLogMiddleware >> GET /api/filters -> 401 (0ms)
+13:27:47.316 | ERROR | Server >> requestLogMiddleware >> GET /api/policies -> 401 (1ms)
+13:27:47.318 | ERROR | Server >> requestLogMiddleware >> GET /api/filters -> 401 (0ms)
+13:27:47.322 | ERROR | Server >> requestLogMiddleware >> GET /api/policies -> 401 (2ms)

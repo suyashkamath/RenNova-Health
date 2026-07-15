@@ -19,67 +19,95 @@
 
 
 
-USE [probus_autoboat_live];
-GO
+-- USE [probus_autoboat_live];
+-- GO
 
-SELECT DISTINCT product_id
-FROM saiba_renewal_transaction_data WITH (NOLOCK)
-ORDER BY product_id;
+-- SELECT DISTINCT product_id
+-- FROM saiba_renewal_transaction_data WITH (NOLOCK)
+-- ORDER BY product_id;
+
+-- -- USE [probus_autoboat_live];
+-- -- GO
+
+-- -- SELECT DISTINCT sub_product_id
+-- -- FROM saiba_renewal_transaction_data WITH (NOLOCK)
+-- -- ORDER BY sub_product_id;
 
 -- USE [probus_autoboat_live];
 -- GO
 
--- SELECT DISTINCT sub_product_id
+-- SELECT DISTINCT
+--     product_id,
+--     sub_product_id
 -- FROM saiba_renewal_transaction_data WITH (NOLOCK)
--- ORDER BY sub_product_id;
+-- ORDER BY product_id, sub_product_id;
 
-USE [probus_autoboat_live];
-GO
+-- -- Everything sitting under HEALTH (product_id = 1) in the live table:
+-- -- every sub_product_id present, its official name (per the master sheet),
+-- -- row count and premium — shows where "Other (0)" / GMC / GPA rows come from.
+-- USE [probus_autoboat_live];
+-- GO
 
-SELECT DISTINCT
-    product_id,
-    sub_product_id
+-- SELECT
+--     t.sub_product_id,
+--     COALESCE(m.sub_product_name, 'Other (' + CAST(t.sub_product_id AS varchar(10)) + ')') AS sub_product_name,
+--     COUNT(*)                                         AS nop,
+--     SUM(CASE WHEN t.is_renewed = 1 THEN 1 ELSE 0 END) AS renewed,
+--     SUM(CASE WHEN t.is_renewed = 0 THEN 1 ELSE 0 END) AS pending,
+--     SUM(t.gross_premium)                             AS gross_premium,
+--     MIN(CAST(t.policy_exp_date AS date))             AS first_expiry,
+--     MAX(CAST(t.policy_exp_date AS date))             AS last_expiry
+-- FROM saiba_renewal_transaction_data t WITH (NOLOCK)
+-- LEFT JOIN (VALUES
+--     (3,  'Individual'),
+--     (4,  'Family'),
+--     (5,  'Individual'),
+--     (6,  'Family'),
+--     (18, 'GMC'),
+--     (19, 'GPA'),
+--     (23, 'Multi Individual'),
+--     (26, 'Personal Accident'),
+--     (27, 'Hospital Cash')
+-- ) AS m (sub_product_id, sub_product_name)
+--     ON m.sub_product_id = t.sub_product_id
+-- WHERE t.product_id = 1
+-- GROUP BY t.sub_product_id, m.sub_product_name
+-- ORDER BY t.sub_product_id;
+
+-- Top 100 HEALTH rows (latest expiries first):
+SELECT TOP (100) *
 FROM saiba_renewal_transaction_data WITH (NOLOCK)
-ORDER BY product_id, sub_product_id;
+WHERE product_id = 1 and vertical_name='PERSONAL ACCIDENT'
+ORDER BY policy_exp_date DESC;
 
--- Everything sitting under HEALTH (product_id = 1) in the live table:
--- every sub_product_id present, its official name (per the master sheet),
--- row count and premium — shows where "Other (0)" / GMC / GPA rows come from.
-USE [probus_autoboat_live];
-GO
 
+
+-- Every vertical_name mapped to product_id = 1 (HEALTH), biggest first:
 SELECT
-    t.sub_product_id,
-    COALESCE(m.sub_product_name, 'Other (' + CAST(t.sub_product_id AS varchar(10)) + ')') AS sub_product_name,
-    COUNT(*)                                         AS nop,
-    SUM(CASE WHEN t.is_renewed = 1 THEN 1 ELSE 0 END) AS renewed,
-    SUM(CASE WHEN t.is_renewed = 0 THEN 1 ELSE 0 END) AS pending,
-    SUM(t.gross_premium)                             AS gross_premium,
-    MIN(CAST(t.policy_exp_date AS date))             AS first_expiry,
-    MAX(CAST(t.policy_exp_date AS date))             AS last_expiry
-FROM saiba_renewal_transaction_data t WITH (NOLOCK)
-LEFT JOIN (VALUES
-    (3,  'Individual'),
-    (4,  'Family'),
-    (5,  'Individual'),
-    (6,  'Family'),
-    (18, 'GMC'),
-    (19, 'GPA'),
-    (23, 'Multi Individual'),
-    (26, 'Personal Accident'),
-    (27, 'Hospital Cash')
-) AS m (sub_product_id, sub_product_name)
-    ON m.sub_product_id = t.sub_product_id
-WHERE t.product_id = 1
-GROUP BY t.sub_product_id, m.sub_product_name
-ORDER BY t.sub_product_id;
-
--- And a few sample rows of the unmapped "Other (0)" bucket, to see what those policies are:
-SELECT TOP (20) *
+    vertical_name,
+    COUNT(*)           AS nop,
+    SUM(gross_premium) AS gross_premium
 FROM saiba_renewal_transaction_data WITH (NOLOCK)
 WHERE product_id = 1
-  AND sub_product_id NOT IN (3, 4, 23, 26)
-ORDER BY policy_exp_date DESC;
+GROUP BY vertical_name
+ORDER BY nop DESC;
+
+-- vertical_name x sub_product_id cross-map under HEALTH:
+SELECT
+    vertical_name,
+    sub_product_id,
+    COUNT(*) AS nop
+FROM saiba_renewal_transaction_data WITH (NOLOCK)
+WHERE product_id = 1
+GROUP BY vertical_name, sub_product_id
+ORDER BY vertical_name, sub_product_id;
+
+-- And a few sample rows of the unmapped "Other (0)" bucket, to see what those policies are:
+-- SELECT TOP (20) *
+-- FROM saiba_renewal_transaction_data WITH (NOLOCK)
+-- WHERE product_id = 1
+--   AND sub_product_id NOT IN (3, 4, 23, 26)
+-- ORDER BY policy_exp_date DESC;
 
 -- USE [probus_autoboat_live];
 -- GO
